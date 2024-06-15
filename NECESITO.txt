@@ -1,0 +1,5 @@
+Cosas que estpy dejando sin hacer y que son necesarias:
+
+Cambiar en CORS la url por la que me de Vercel
+Cambiar las url que apuntan, ahora mismo a la app en intellij para que apunten a render.com
+Posiblemente borrar estilos en el styles.css general

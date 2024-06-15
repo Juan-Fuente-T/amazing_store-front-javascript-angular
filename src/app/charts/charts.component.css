@@ -1,0 +1,119 @@
+.card {
+  margin: auto;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 25px;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+.chart-row,
+.chart-row-procedencia {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  width: 100%;
+}
+
+.chart-gauge {
+  margin-left: 30px;
+}
+.chart-row.custom-row-2 {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.container-margin-top {
+  margin-top: 120px;
+}
+
+.chart-row div,
+.chart-row-procedencia div,
+.chart-row.custom-row div,
+.chart-row.custom-row-2 div {
+  flex: 1 1 calc(50% - 20px); /* Ajuste para dos gráficos por fila con espacio entre ellos */
+  max-width: calc(50% - 20px);
+  margin: 10px;
+}
+
+.chart-row-procedencia div {
+  justify-content: center;
+}
+
+.chart-row-procedencia .custom-tooltip-container-procedencia {
+  display: flex;
+  justify-content: center;
+  /* align-items: stretch; */
+  margin-top: 40px;
+  width: 90%;
+}
+
+.custom-title {
+  margin: 15px;
+}
+.chart-row-margin-top {
+  margin-top: 80px;
+}
+
+.linear-chart {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0 auto;
+}
+
+@media (max-width: 1300px) {
+  .card {
+    max-width: 100%;
+    align-items: center;
+    justify-content: space-around;
+    margin: 10px;
+    padding: 10px;
+  }
+}
+@media (max-width: 1100px) {
+  .chart-row-procedencia,
+  .chart-row {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .chart-row div,
+  .chart-row-procedencia div,
+  .chart-row.custom-row div,
+  .chart-row.custom-row-2 div {
+    flex: 1 1 100%; /* Cambia esto para permitir que los elementos crezcan más allá del 50% */
+    max-width: none;
+    margin: 10px;
+    justify-content: center;
+  }
+  .chart-row-procedencia,
+  .chart-row {
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .custom-tooltip-container-procedencia {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  /* .card {
+    max-width: 100%;
+    justify-content: center;
+  } */
+
+  .chart-gauge div {
+    margin: auto;
+    margin-top: 45px;
+    margin-bottom: 45px;
+    margin-right: 95px;
+  }
+}

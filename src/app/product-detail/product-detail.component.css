@@ -1,0 +1,26 @@
+.card {
+  margin: 20px 40px 0 40px;
+}
+.card mat-card-title {
+  margin: 10px 10px;
+}
+
+.mat-mdc-card-actions {
+  display: flex;
+  /* justify-content: flex-end; */
+  justify-content: flex-start;
+}
+mat-card-actions button {
+  margin: 8px;
+  justify-content: flex-end; /*curiosamente esto centra el icono en el boton*/
+}
+
+.card-content p mat-icon,
+.card-content strong {
+  margin: 5px;
+}
+
+.card-content p {
+  display: flex;
+  align-items: center;
+}

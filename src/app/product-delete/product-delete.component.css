@@ -1,0 +1,15 @@
+h1,
+p {
+  margin: 15px;
+}
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 3px;
+  margin: 10px;
+}
+.buttons button {
+  margin-left: 8px;
+  display: flex;
+  justify-content: flex-end;
+}

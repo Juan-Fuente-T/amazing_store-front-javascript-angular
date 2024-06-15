@@ -1,0 +1,26 @@
+.card {
+  margin: 20px 40px 0 40px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+}
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+.buttons button {
+  margin: 8px;
+  justify-content: flex-end; /*curiosamente esto centra el icono en el boton*/
+}
+.card mat-card-title {
+  margin: 5px 10px;
+}
+.card-content p {
+  display: flex;
+  align-items: center;
+}
+.card-content p mat-icon,
+.card-content strong {
+  margin: 5px;
+}

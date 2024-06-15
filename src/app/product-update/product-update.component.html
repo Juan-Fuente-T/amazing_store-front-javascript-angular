@@ -1,0 +1,60 @@
+<mat-card class="card">
+    <mat-card-title>Edita el producto</mat-card-title>
+    <mat-card-content class = "card-content">
+       <form (submit)= "updateProduct()">
+
+        <mat-form-field appearance="outline">
+            <mat-label>Nombre</mat-label>
+            <input matInput type="text" name="name" [(ngModel)] = "product.name">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Stock</mat-label>
+            <input matInput type="text" name="stock" [(ngModel)] = "product.stock">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Precio</mat-label>
+            <input matInput type="text" name="price" [(ngModel)] = "product.price">
+            <!-- <input matInput type="text" name="price" [value]="product.price |currency:'EUR'"> -->
+        </mat-form-field>
+       <mat-form-field appearance="outline">
+            <mat-label>Activo</mat-label>
+            <!-- <input matInput type="text" name="active" [(ngModel)] = "product.active" readonly> -->
+            <input matInput type="text" name="active" [value]="product.active ? 'Activo' : 'Inactivo'" readonly>
+            <!-- <mat-slide-toggle  [(ngModel)]="product.active">Cambiar estado</mat-slide-toggle> -->
+            <mat-slide-toggle  [formControl]="activeControl" (change)="toggleActive()">Cambiar estado</mat-slide-toggle>
+        </mat-form-field> 
+        <mat-form-field appearance="outline">
+            <mat-label>Tipo de producto</mat-label>
+            <input matInput type="text" name="product_type" [(ngModel)] = "product.product_type">
+            <!-- <input matInput type="text" name="price" [value]="product.price |currency:'EUR'"> -->
+        </mat-form-field>
+        <!-- <mat-form-field appearance="outline">
+            <mat-label>Activo</mat-label>
+            <mat-checkbox [formControl]="activeControl">Cambiar estado</mat-checkbox>
+        </mat-form-field> -->
+        <mat-form-field appearance="outline" id="date">
+            <mat-label>Fecha de alta</mat-label>
+            <input matInput [matDatepicker]="datepicker" name="date_added" [(ngModel)]="product.date_added">
+            <!-- <mat-datepicker-toggle matIconSuffix [for]="datepicker"></mat-datepicker-toggle> -->
+            <mat-datepicker-toggle matPrefix [for]="datepicker"></mat-datepicker-toggle>
+            <mat-datepicker #datepicker>
+            </mat-datepicker>
+            <!-- <input matInput type="text" name="date_added" [(ngModel)] = "product.date_added" > -->
+            <!-- <input matInput type="text" name="date_added" [value]="product.date_added | date: 'dd/MM/yyyy'"> -->
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Id del productor</mat-label>
+            <input matInput type="text" name="contact_id" [(ngModel)] = "product.contact_id">
+        </mat-form-field>
+        <div class="buttons">
+            <button mat-raised-button color="primary" type="submit" >
+                <mat-icon>save</mat-icon>
+            </button>
+            <button mat-raised-button type="button" (click)="cancelChange()">
+                <mat-icon>cancel</mat-icon>
+            </button>
+        </div>
+    </form>
+
+    </mat-card-content>
+</mat-card>

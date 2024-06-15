@@ -1,0 +1,46 @@
+<mat-card class="card">
+    <mat-card-title>Detalle del contacto</mat-card-title>
+    <mat-card-content class = "card-content">
+       <!-- <p *ngIf="contact"> -->
+       <p>
+        <mat-icon>person</mat-icon>
+        <strong>Nombre: </strong> {{ contact.name }}
+       </p>
+       <p>
+        <mat-icon>person</mat-icon>
+        <strong>Primer Apellido: </strong>{{contact.surname}}
+       </p>
+       <p>
+        <mat-icon>person</mat-icon>
+        <strong>Segundo Apellido: </strong>{{contact.lastname}}
+       </p>
+       <p>
+        <mat-icon>phone</mat-icon>
+        <strong>Teléfono: </strong>{{contact.telephone}}
+       </p>
+       <p>
+        <mat-icon>location_on</mat-icon>
+        <strong>Ubicación </strong>{{contact.city}}
+       </p>
+       <p>
+        <mat-icon>email</mat-icon>
+        <strong>Email: </strong>{{contact.email}}
+       </p>
+       <p>
+        <mat-icon>inventory</mat-icon>
+        <strong>Tipo de producto: </strong>{{contact.product_type}}
+       </p>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-raised-button type="button" (click)="editContact()">
+        <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-raised-button type="button" (click)="closeContact()">
+        <mat-icon>close</mat-icon>
+        </button>
+        <button mat-raised-button type="button" color="warm" (click)="openDeleteDialog(contact.id)">
+        <mat-icon>delete</mat-icon>
+        </button>
+
+    </mat-card-actions>
+</mat-card>

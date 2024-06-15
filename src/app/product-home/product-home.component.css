@@ -1,0 +1,15 @@
+table {
+  /* margin: 20px 0 0 40px; */
+  margin: 20px 40px;
+  width: calc(100% - 80px);
+}
+.mdc-data-table__table {
+  min-width: 50%;
+}
+.mat-mdc-row {
+  cursor: pointer;
+  background-color: whitesmoke;
+}
+#new-product {
+  margin: 20px 0 0 40px;
+}

@@ -1,5 +1,7 @@
 .card {
   margin: 20px 40px 0 40px;
+  border: solid 1px #673ab7;
+  border-radius: 6px;
 }
 .card mat-card-title {
   margin: 10px 10px;

@@ -9,13 +9,13 @@
       <td mat-cell *matCellDef="let contact"> {{contact.name}} </td>
     </ng-container>
     <ng-container matColumnDef="surname">
-      <th mat-header-cell *matHeaderCellDef> Apellido </th>
+      <th mat-header-cell *matHeaderCellDef> Segundo Nombre </th>
       <td mat-cell *matCellDef="let contact"> {{contact.surname}} </td>
     </ng-container>
-    <ng-container matColumnDef="lastname">
+    <!-- <ng-container matColumnDef="lastname">
       <th mat-header-cell *matHeaderCellDef> Segundo Apellido </th>
       <td mat-cell *matCellDef="let contact"> {{contact.lastname}} </td>
-    </ng-container>
+    </ng-container> -->
     <ng-container matColumnDef="telephone">
       <th mat-header-cell *matHeaderCellDef> Teléfono </th>
       <td mat-cell *matCellDef="let contact"> {{contact.telephone}} </td>
@@ -36,17 +36,17 @@
     <ng-container matColumnDef="actions">
       <th mat-header-cell *matHeaderCellDef> Acción</th>
       <td mat-cell *matCellDef="let contact"> 
-        <button mat-icon-button color="primary"  (click)="editContactDetail(contact.id); $event.stopPropagation()">
+        <button class="merda" mat-icon-button color="primary"  (click)="editContactDetail(contact.id); $event.stopPropagation()">
           <mat-icon>edit</mat-icon>
         </button>
-        <button mat-icon-button color="warn"  (click)="openDeleteDialog(contact.id); $event.stopPropagation()">
+        <button class="merda" mat-icon-button color="warn"  (click)="openDeleteDialog(contact.id); $event.stopPropagation()">
           <mat-icon>delete</mat-icon>
         </button>
       </td>
     </ng-container>
   
-    <tr mat-header-row *matHeaderRowDef="['id', 'name', 'surname', 'lastname', 'telephone', 'city', 'email', 'product_type', 'actions']"></tr>
-    <tr mat-row *matRowDef="let row; columns: ['id','name', 'surname', 'lastname', 'telephone', 'city', 'email', 'product_type', 'actions'];"
+    <tr mat-header-row *matHeaderRowDef="['id', 'name', 'surname', 'telephone', 'city', 'email', 'product_type', 'actions']"></tr>
+    <tr mat-row *matRowDef="let row; columns: ['id','name', 'surname', 'telephone', 'city', 'email', 'product_type', 'actions'];"
     (click)="openDetailForm(row)"></tr>
   </table>
   

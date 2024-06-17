@@ -2,14 +2,21 @@ table {
   /* margin: 20px 0 0 40px; */
   margin: 20px 40px;
   width: calc(100% - 80px);
+  padding: 10px;
 }
 .mdc-data-table__table {
   min-width: 50%;
+  border: solid 1px #673ab7;
+  border-radius: 6px;
 }
 .mat-mdc-row {
   cursor: pointer;
   background-color: whitesmoke;
+  margin: 4px;
+  padding: 5%;
 }
 #new-product {
   margin: 20px 0 0 40px;
+  border: solid 1px #673ab7;
+  border-radius: 6px;
 }

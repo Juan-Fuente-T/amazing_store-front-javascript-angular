@@ -11,8 +11,7 @@ export class ContactsService {
 
   getContacts(): Observable<any>{
     //es una accion que necesita obtener datos constante, debe ser observable
-    // const url = 'https://amazing-store-1-2.onrender.com/contacts/getAll';
-    // const url = 'https://amazing-store-v0-1.onrender.com/contacts/getAll';
+    // const url = 'https://amazing-store-v1-3.onrender.com/contacts/getAll';
     // const url = 'http://192.168.0.10:8080/contacts/getAll';
     const url = 'http://localhost:30030/contacts/getAll';
     const headers = new HttpHeaders();
@@ -22,8 +21,7 @@ export class ContactsService {
     return this.http.get<any>(url, {headers});
   }
   getContact(c_id: number): Observable<any>{
-    // const url = 'https://amazing-store-1-2.onrender.com/contacts/get';
-    // const url = 'https://amazing-store-v0-1.onrender.com/contacts/get';
+    // const url = 'https://amazing-store-v1-3.onrender.com/contacts/get';
     // const url = 'http://192.168.0.10:8080/contacts/get';
     const url = 'http://localhost:30030/contacts/get';
     const headers = new HttpHeaders()
@@ -39,8 +37,7 @@ export class ContactsService {
   //   this.http.put(url, body, {headers}).subscribe();
   // }
   updateContact(contact: any): Observable<any>{
-    // const url = 'https://amazing-store-1-2.onrender.com/contacts/update';
-    // const url = 'https://amazing-store-v0-1.onrender.com/contacts/update';
+    // const url = 'https://amazing-store-v1-3.onrender.com/contacts/update';
     // const url = 'http://192.168.0.10:8080/contacts/update';
     const url = 'http://localhost:30030/contacts/update';
     const headers = new HttpHeaders();
@@ -48,8 +45,7 @@ export class ContactsService {
     return this.http.put(url, body, {headers});
   }
   newContact(contact: any): void{
-    // const url = 'https://amazing-store-1-2.onrender.com/contacts/add';
-    // const url = 'https://amazing-store-v0-1.onrender.com/contacts/add';
+    // const url = 'https://amazing-store-v1-3.onrender.com/contacts/add';
     // const url = 'http://192.168.0.10:8080/contacts/add';
     const url = 'http://localhost:30030/contacts/add';
     const headers = new HttpHeaders();
@@ -65,10 +61,10 @@ export class ContactsService {
   // }
 
   deleteContact(id:number): void{
-    // const url = 'https://amazing-store-1-2.onrender.com/contacts/delete';
-    // const url = 'https://amazing-store-v0-1.onrender.com/contacts/delete';
+    // const url = 'https://amazing-store-v1-3.onrender.com/products/delete';
     // const url = 'http://192.168.0.10:8080/contacts/delete';
     const url = 'http://localhost:30030/contacts/delete';
+    // 
     const body = {id:id};
     const options = {
       body: body,

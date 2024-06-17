@@ -1,17 +1,37 @@
 table {
   /* margin: 20px 0 0 40px; */
+
   margin: 20px 40px;
   width: calc(100% - 80px);
+  padding: 10px;
 }
 .mdc-data-table__table {
   min-width: 50%;
+  border: solid 2px #673ab7;
+  border-radius: 6px;
 }
 .mat-mdc-row {
   cursor: pointer;
   background-color: whitesmoke;
+  margin: 4px;
+  padding: 5%;
+}
+
+/* .cdk-row :hover {
+  cursor: pointer;
+  background-color: rgb(192, 2, 2);
+  margin: 4px;
+  padding: 5%;
+} */
+
+.mdc-data-table__row {
+  cursor: pointer;
+  background-color: rgb(236, 236, 246);
 }
 #new-contact {
   margin: 20px 0 0 40px;
+  border: solid 1px #673ab7;
+  border-radius: 6px;
 }
 /* .mdc-dialog__container {
   width: 2000px;

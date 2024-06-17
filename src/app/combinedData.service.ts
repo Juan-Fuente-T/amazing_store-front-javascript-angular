@@ -11,9 +11,8 @@ export class CombinedDataService {
 
   getContactProducts(): Observable<any>{
     //es una accion que necesita obtener datos constante, debe ser observable
-    // const url = 'https://amazing-store-1-2.onrender.com/contacts/getAll';
-    // const url = 'https://amazing-store-v0-1.onrender.com/contacts/getAll';
-    // const url = 'http://192.168.0.10:8080/contacts/getAll';
+    // const url = 'https://amazing-store-v1-3.onrender.com/combined-data/contact-products';
+    // const url = 'http://192.168.0.10:8080/combined-data/contact-products';
     const url = 'http://localhost:30030/combined-data/contact-products';
     const headers = new HttpHeaders();
     //.set('Authorization', 'Basic ' + btoa('demo:demo'))

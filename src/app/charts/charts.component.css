@@ -8,6 +8,8 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: stretch;
+  border: solid 1px #673ab7;
+  border-radius: 6px;
 }
 
 .chart-row,

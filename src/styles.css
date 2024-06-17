@@ -13,113 +13,26 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
-/* .chart-legend {
-  position: absolute;
-  top: 80%;
-  left: 20%;
-} */
-/* ngx-charts-gauge {
-  position: relative;
-}
-.legend-labels {
-  width: fit-content !important;
-} */
-/* mat-mdc-table mdc-data-table__table cdk-table mat-elevation-z8 */
-mat-mdc-table
-  mdc-data-table__table
-  cdk-table
-  mat-elevation-z8
-  .mat-elevation-z8 {
-  background-color: white;
-  max-height: 35px;
-  border-radius: 4px;
-  margin-bottom: 3px;
-}
+
 .mdc-data-table__table :hover {
   background: whitesmoke;
   border-radius: 6px;
 }
-/*POSIBLEMENTE LOS SIGUIENTES ESTILOS HAYA QUE BORRARLOS*/
-.ng-tns-c88-12,
-.ng-trigger,
-.ng-trigger-animationState,
-.ng-star-inserted {
-  /* width: 200px; */
-}
-.ng-tns-c88-18 {
-  /* width: 20px;
-  background: green; */
-}
-.custom-y-axis-tick.axis-text {
-}
-.bar {
-  /* width: 15px;
-  stroke-width: 22px;  */
-}
-/**********************************************/
-.custom-tooltip-container {
-}
-.advanced-pie-legend {
-}
 
-.custom-tooltip-container-procedencia {
-  /* display: flex; */
-  /* justify-content: center; */
-  /* align-items: center; */
-  /* margin: auto; */
-  /* max-width: 100%; */
-}
 .custom-tooltip-container-procedencia .ng-star-inserted {
   width: 70px;
   padding: 20px 0px;
 }
 
-/* .custom-tooltip-container .ngx-charts-tooltip-content p {
-  margin: 0;
-}
-
-.custom-tooltip-container .ngx-charts-tooltip-content ul {
-  padding-left: 20px;
-  margin: 0;
-  list-style-type: none;
-}
-
-.custom-tooltip-container .ngx-charts-tooltip-content li {
-  white-space: nowrap; 
-} */
-.custom-tooltip-container-p-p-productor .legend-labels {
-  /* max-width: 170px;
-  width: 15%;
-  /* margin: 0px 30px; *
-  margin: 0px 70px 0px 40px;
-  background-color: aqua; */
-}
-.custom-tooltip-container-p-p-productor .chart-legend {
-  /* max-width: 170px; */
-  /* width: 15%; */
-  /* margin: 0px 30px; */
-  /* margin: 10px; */
-  /* background-color: aqua; */
-}
 .legend-container .chart-legend .legend-labels {
-  /* max-width: 170px; */
   width: 170px;
   margin-left: 30px;
-  /* margin-right: 120px; */
-  /* margin: 0px 30px;
-  margin: 10px; */
 }
-.chart-row-2.legend-container .chart-legend .legend-labels {
-  /* margin-right: 180px; */
-}
+
 @media (max-width: 1300px) {
   .legend-container .chart-legend .legend-labels {
-    /* max-width: 170px; */
     width: 160px;
     margin-left: 20px;
-    /* margin-right: 120px; */
-    /* margin: 0px 30px;
-    margin: 10px; */
   }
   @media (max-width: 1100px) {
     .legend-container .chart-legend .legend-labels {

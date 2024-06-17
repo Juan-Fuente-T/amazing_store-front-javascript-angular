@@ -1,6 +1,7 @@
 export const environment = {
     production: false,
-    apiUrl: 'http://amazing-store-v0-1.onrender.com'
+    // apiUrl: 'http://amazing-store-v0-1.onrender.com'
+    apiUrl: 'http://localhost:30030'
   };
 //   import { Injectable } from '@angular/core';
 // import { Observable } from 'rxjs';

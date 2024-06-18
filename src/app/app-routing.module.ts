@@ -22,6 +22,10 @@ const routes: Routes = [
   {path: 'product/edit/:id', component: ProductUpdateComponent}
 ];
 
+/**
+ * AppRoutingModule defines the application's routing configuration.
+ * It maps URL paths to components, enabling navigation between different views within the app.
+ */
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

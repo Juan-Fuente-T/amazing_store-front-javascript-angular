@@ -92,7 +92,7 @@
   .chart-row-procedencia div,
   .chart-row.custom-row div,
   .chart-row.custom-row-2 div {
-    flex: 1 1 100%; /* Cambia esto para permitir que los elementos crezcan más allá del 50% */
+    flex: 1 1 100%; /* Cambiar esto para permitir que los elementos crezcan más allá del 50% */
     max-width: none;
     margin: 10px;
     justify-content: center;
@@ -107,10 +107,6 @@
     flex-direction: column;
     justify-content: flex-start;
   }
-  /* .card {
-    max-width: 100%;
-    justify-content: center;
-  } */
 
   .chart-gauge div {
     margin: auto;

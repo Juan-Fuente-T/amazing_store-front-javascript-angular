@@ -5,26 +5,26 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ContactHomeComponent } from './contact-home/contact-home.component';
-import {MatTableModule} from '@angular/material/table';
+import { MatTableModule } from '@angular/material/table';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { MatToolbarModule } from '@angular/material/toolbar'; 
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { ProductHomeComponent } from './product-home/product-home.component';
 import { ContactDetailComponent } from './contact-detail/contact-detail.component';
-import {MatCardModule} from '@angular/material/card';
-import {MatInputModule} from '@angular/material/input';
-import {MatIconModule} from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { registerLocaleData } from '@angular/common';
-import localeEs from '@angular/common/locales/es';
+import localeEs from '@angular/common/locales/es'; // Importa el paquete de localización español
 import { LOCALE_ID } from '@angular/core';
 import { ContactUpdateComponent } from './contact-update/contact-update.component';
 import { FormsModule } from '@angular/forms';
 import { ProductUpdateComponent } from './product-update/product-update.component';
-import {MatDatepickerModule} from '@angular/material/datepicker';
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatDialogModule } from '@angular/material/dialog';
 import { MatNativeDateModule } from '@angular/material/core';
-import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { ContactNewComponent } from './contact-new/contact-new.component';
@@ -33,8 +33,12 @@ import { ContactDeleteComponent } from './contact-delete/contact-delete.componen
 import { ProductDeleteComponent } from './product-delete/product-delete.component';
 import { ChartsComponent } from './charts/charts.component';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
-
+// Registra los datos locales para español
 registerLocaleData(localeEs);
+/**
+ * AppModule is the root module of the application.
+ * It bootstraps the main AppComponent and configures the application-wide settings.
+ */
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,9 +52,9 @@ registerLocaleData(localeEs);
     ProductNewComponent,
     ContactDeleteComponent,
     ProductDeleteComponent,
-    ChartsComponent
+    ChartsComponent,
   ],
-  entryComponents:[ContactDeleteComponent],//indica que se abre por encima del resto
+  entryComponents: [ContactDeleteComponent], //indica que se abre por encima del resto
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -69,14 +73,14 @@ registerLocaleData(localeEs);
     ReactiveFormsModule,
     MatCheckboxModule,
     MatDialogModule,
-    NgxChartsModule
+    NgxChartsModule,
   ],
   providers: [
-  {
-    provide: LOCALE_ID,
-    useValue: 'es-ES',
-  },
-],
-  bootstrap: [AppComponent]
+    {
+      provide: LOCALE_ID,
+      useValue: 'es-ES',
+    },
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

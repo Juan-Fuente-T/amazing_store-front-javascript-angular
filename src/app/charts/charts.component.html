@@ -12,22 +12,22 @@
         <div class="chart-row custom-row chart-row-margin-top">
             <div>
                 <p><Strong>Productores y número de productos</Strong></p>
-                <ngx-charts-bar-vertical [view]="[400, 500]" [results]="numberProductsBySupplier" [xAxis]="true" 
-                [yAxis]="true" [legend]="false" [showXAxisLabel]="true" [scheme]="'ocean'" 
-                xAxisLabel="Productores"  yAxisLabel="Numero de pedidos" [yAxisTickFormatting]="formatAxisTick"
-                [maxXAxisTickLength]="65" [roundEdges]="false">
-            </ngx-charts-bar-vertical>
+                <ngx-charts-bar-vertical [view]="[400, 500]" [results]="numberProductsBySupplier" [xAxis]="true"
+                    [yAxis]="true" [legend]="false" [showXAxisLabel]="true" [scheme]="'ocean'" [showYAxisLabel]="true"
+                    xAxisLabel="Productores" yAxisLabel="Cantidad de productos" [yAxisTickFormatting]="formatAxisTick"
+                    [maxXAxisTickLength]="65" [roundEdges]="false" [showDataLabel]="true">
+                </ngx-charts-bar-vertical>
+            </div>
+            <div class="legend-container">
+                <p><Strong>Stock por productor</Strong></p>
+                <ngx-charts-bar-vertical-stacked [view]="[400, 500]" [results]="productsStockPerSupplier" [xAxis]="true"
+                    [yAxis]="true" [legend]="true" [showXAxisLabel]="true" [scheme]="'ocean'" [showYAxisLabel]="true"
+                    xAxisLabel="Productores" yAxisLabel="Stock por producto" [wrapTicks]="true" [barPadding]="5"
+                    [ngClass]="{'custom-y-axis-tick': true}" [maxXAxisTickLength]="65">
+                </ngx-charts-bar-vertical-stacked>
+            </div>
         </div>
-        <div class="legend-container">
-            <p><Strong>Stock por productor</Strong></p>
-            <ngx-charts-bar-vertical-stacked [view]="[400, 500]" [results]="productsPerSupplier" [xAxis]="true" 
-            [yAxis]="true" [legend]="true" [showXAxisLabel]="true" [scheme]="'ocean'" 
-            xAxisLabel="Productores"  yAxisLabel="Cantidad de productos"  [wrapTicks]="true" [barPadding]="5"
-            [ngClass]="{'custom-y-axis-tick': true}" [maxXAxisTickLength]="65">
-            </ngx-charts-bar-vertical-stacked>
-        </div>
-</div>
-<!-- <div class="chart-row">
+        <!-- <div class="chart-row">
     <div>
         <p><Strong>Extensión de email</Strong></p>
         <ngx-charts-pie-chart [view]="[400, 300]" [results]="emailExtensions" 
@@ -35,44 +35,43 @@
     </ngx-charts-pie-chart>
     </div>
 <div> -->
-<div class="chart-row-procedencia">
-    <div class="custom-tooltip-container-procedencia">
-        <p><Strong>Productores por procedencia</Strong></p>
-        <ngx-charts-advanced-pie-chart [view]="[800, 400]" [results]="contactsCity" 
-         xAxisLabel="Procedencia" [scheme]="'ocean'"   [tooltipDisabled]="false" >
-        </ngx-charts-advanced-pie-chart>
-    </div>
-    
-    <!-- <div>
+        <div class="chart-row-procedencia">
+            <div class="custom-tooltip-container-procedencia">
+                <p><Strong>Productores por procedencia</Strong></p>
+                <ngx-charts-advanced-pie-chart [view]="[800, 400]" [results]="contactsCity" xAxisLabel="Procedencia"
+                    [scheme]="'ocean'" [tooltipDisabled]="false">
+                </ngx-charts-advanced-pie-chart>
+            </div>
+
+            <!-- <div>
         <p><Strong>Prefijos</Strong></p>
         <ngx-charts-bar-horizontal [view]="[400, 300]" [results]="phonePrefixData" [xAxis]="true" 
         [yAxis]="true" [legend]="false" [showXAxisLabel]="true"  [showYAxisLabel]="true" 
         xAxisLabel="Número de veces repetido"  yAxisLabel="Prefijos de teléfono" [scheme]="'ocean'" >
         </ngx-charts-bar-horizontal>
     </div> -->
-</div>
-    <div class="chart-row custom-row-2">
-    <!-- <div class="supermerda"> -->
-        <div class="legend-container">
-            <p><Strong>Productos por productor</Strong></p>
-            <ngx-charts-bar-vertical-normalized [view]="[500, 400]" [results]="productsPerSupplier" [xAxis]="true" 
-            [yAxis]="true" [legend]="true" [showXAxisLabel]="true" [showYAxisLabel]="true" [scheme]="'ocean'" 
-            xAxisLabel="Productores"  yAxisLabel="Porcentaje sobre el total del productor"  [wrapTicks]="true" [barPadding]="4"
-             [ngClass]="{'custom-y-axis-tick': true}" 
-        >
-            <!-- [yAxisTickFormatting]="formatAxisTick" [yScaleMin]="minValue"> -->
-            </ngx-charts-bar-vertical-normalized>
         </div>
-        <div class="linear-chart">
-            <p><Strong>Número de productos por productor</Strong></p>
-            <div id="chart-11" class="centered-graph">
-                <ngx-charts-line-chart [view]="[400, 400]" [results]="productsBySupplier" [xAxis]="true" 
-                [yAxis]="true" [legend]="false" [showXAxisLabel]="true" 
-                xAxisLabel="Productos por productor"  yAxisLabel="Productores" [scheme]="'ocean'" [maxXAxisTickLength]="75">
-              </ngx-charts-line-chart>
+        <div class="chart-row custom-row-2">
+            <div class="legend-container">
+                <p><Strong>Productos y porcentaje de stock por productor</Strong></p>
+                <ngx-charts-bar-vertical-normalized [view]="[500, 400]" [results]="productsStockPerSupplier"
+                    [xAxis]="true" [yAxis]="true" [legend]="true" [showXAxisLabel]="true" [showYAxisLabel]="true"
+                    [scheme]="'ocean'" xAxisLabel="Productores" yAxisLabel="Porcentaje sobre el total del productor"
+                    [wrapTicks]="true" [barPadding]="4" [ngClass]="{'custom-y-axis-tick': true}">
+                    <!-- [yAxisTickFormatting]="formatAxisTick" [yScaleMin]="minValue"> -->
+                </ngx-charts-bar-vertical-normalized>
+            </div>
+            <div class="linear-chart">
+                <p><Strong>Número de productos por productor</Strong></p>
+                <div id="chart-11" class="centered-graph">
+                    <ngx-charts-line-chart [view]="[400, 400]" [results]="productsBySupplier" [xAxis]="true"
+                        [yAxis]="true" [legend]="false" [showXAxisLabel]="true" [showYAxisLabel]="true"
+                        xAxisLabel="Productores" yAxisLabel="Productos por productor" [scheme]="'ocean'"
+                        [maxXAxisTickLength]="75">
+                    </ngx-charts-line-chart>
+                </div>
             </div>
         </div>
-    </div>
     </mat-card-content>
 </mat-card>
 <mat-card class="card">
@@ -82,20 +81,22 @@
         <div class="chart-row custom-row-2 chart-row-margin-top">
             <div id="chart-11" class="legend-container">
                 <p><Strong>Stock por producto</Strong></p>
-                <ngx-charts-bar-vertical [view]="[500, 400]" [results]="productsStock" [xAxis]="true" 
-                [yAxis]="true" [legend]="true" [showXAxisLabel]="true" [scheme]="'ocean'" 
-                xAxisLabel="Productos"  yAxisLabel="Cantidad de productos" [showDataLabel]="true" [roundEdges]="false" >
-                <!-- [yAxisTickFormatting]="formatAxisTick" [yScaleMin]="minValue"> -->
+                <ngx-charts-bar-vertical [view]="[500, 400]" [results]="productsStock" [xAxis]="true" [yAxis]="true"
+                    [legend]="true" [showXAxisLabel]="true" [showYAxisLabel]="true" [scheme]="'ocean'"
+                    xAxisLabel="Productos" yAxisLabel="Cantidad de productos" [showDataLabel]="true"
+                    [roundEdges]="false">
+                    <!-- [yAxisTickFormatting]="formatAxisTick" [yScaleMin]="minValue"> -->
 
-            </ngx-charts-bar-vertical>
+                </ngx-charts-bar-vertical>
             </div>
             <div id="chart-11" class="linear-chart">
                 <div class="centered-graph">
-                <p><Strong>Rango de precios</Strong></p>
-                <ngx-charts-line-chart [view]="[400, 400]" [results]="productsPriceRange"  [xAxis]="true" 
-                [yAxis]="true" [legend]="true" [legendPosition]="legendPosition" [showXAxisLabel]="true"  [showYAxisLabel]="true" [scheme]="'ocean'" 
-                xAxisLabel="Rango de precios"  yAxisLabel="Numero de productos" [animations]="true">
-                </ngx-charts-line-chart>
+                    <p><Strong>Rango de precios</Strong></p>
+                    <ngx-charts-line-chart [view]="[400, 400]" [results]="productsPriceRange" [xAxis]="true"
+                        [yAxis]="true" [legend]="true" [legendPosition]="legendPosition" [showXAxisLabel]="true"
+                        [showYAxisLabel]="true" [scheme]="'ocean'" xAxisLabel="Rango de precios"
+                        yAxisLabel="Numero de productos" [animations]="true">
+                    </ngx-charts-line-chart>
                 </div>
             </div>
         </div>
@@ -103,29 +104,29 @@
             <div>
                 <p><Strong>Estado de los productos</Strong></p>
                 <!-- <ngx-charts-gauge  [view]="[400, 400]" [results]="stateProducts" [max]="30" [scheme]="colorScheme"> -->
-                <ngx-charts-gauge  [view]="[480, 360]"[results]="stateProducts"  [legend]="true"
-                [max]="maxStateValue"  [showText]="true" [legendTitle]="'Estado del producto'" 
-                [tooltipDisabled]="false" [smallSegments]="0" [units]="'Total'" [scheme]="'ocean'" 
-                 [legendPosition]="legendPosition" [axisTickFormatting]="formatAxisTick2" >
+                <ngx-charts-gauge [view]="[480, 360]" [results]="stateProducts" [legend]="true" [max]="maxStateValue"
+                    [showText]="true" [legendTitle]="'Estado del producto'" [tooltipDisabled]="false"
+                    [smallSegments]="0" [units]="'Total'" [scheme]="'ocean'" [legendPosition]="legendPosition"
+                    [axisTickFormatting]="formatAxisTick2">
                 </ngx-charts-gauge>
             </div>
             <div>
                 <p><Strong>Estado del Stock</Strong></p>
                 <!-- <ngx-charts-gauge  [view]="[400, 400]" [results]="stateProducts" [max]="30" [scheme]="colorScheme"> -->
-                <ngx-charts-gauge  [view]="[480, 360]"[results]="stockProducts"  [legend]="true"
-                [max]="maxTotalProducts"  [showText]="true" [legendTitle]="'Estado del stock'" 
-                [tooltipDisabled]="false" [smallSegments]="0" [units]="'Total'" [scheme]="'ocean'" 
-                 [legendPosition]="legendPosition" [axisTickFormatting]="formatAxisTick2" >
+                <ngx-charts-gauge [view]="[480, 360]" [results]="stockProducts" [legend]="true" [max]="maxTotalProducts"
+                    [showText]="true" [legendTitle]="'Estado del stock'" [tooltipDisabled]="false" [smallSegments]="0"
+                    [units]="'Total'" [scheme]="'ocean'" [legendPosition]="legendPosition"
+                    [axisTickFormatting]="formatAxisTick2">
                 </ngx-charts-gauge>
             </div>
         </div>
-            <div class="chart-row container-margin-top custom-row">
+        <div class="chart-row container-margin-top custom-row">
             <div>
                 <p><Strong>Alta de productos por mes</Strong></p>
-                <ngx-charts-bar-horizontal [view]="[400, 400]" [results]="productsPerMonth" [xAxis]="true" 
-                [yAxis]="true" [showXAxisLabel]="true" [scheme]="'ocean'" 
-                xAxisLabel="Meses de alta"  yAxisLabel="Cantidad de productos" [showDataLabel]="true">
-                <!-- [yAxisTickFormatting]="formatAxisTick" [yScaleMin]="minValue"> -->
+                <ngx-charts-bar-horizontal [view]="[400, 400]" [results]="productsPerMonth" [xAxis]="true"
+                    [yAxis]="true" [showXAxisLabel]="true" [scheme]="'ocean'" [roundEdges]="false"
+                    xAxisLabel="Meses de alta" yAxisLabel="Cantidad de productos" [showDataLabel]="true">
+                    [yAxisTickFormatting]="formatAxisTick" [yScaleMin]="minValue">
                 </ngx-charts-bar-horizontal>
             </div>
             <!-- <div>
@@ -137,9 +138,9 @@
             </div> -->
             <div id="chart-11" class="legend-container">
                 <p><Strong>Precio por producto</Strong></p>
-                <ngx-charts-bar-horizontal-stacked [view]="[400, 300]" [results]="pricePerProduct" [xAxis]="true" 
-                [yAxis]="true" [legend]="true" [showXAxisLabel]="true"  [showYAxisLabel]="true" 
-                xAxisLabel="Precio de cada producto"  yAxisLabel="Categorias" [scheme]="'ocean'" [barPadding]="15">
+                <ngx-charts-bar-horizontal-stacked [view]="[400, 300]" [results]="pricePerProduct" [xAxis]="false"
+                    [yAxis]="true" [legend]="true" [showXAxisLabel]="true" [showYAxisLabel]="true"
+                    xAxisLabel="Precio de cada producto" yAxisLabel="Categorias" [scheme]="'ocean'" [barPadding]="15">
                 </ngx-charts-bar-horizontal-stacked>
             </div>
         </div>

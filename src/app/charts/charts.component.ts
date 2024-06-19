@@ -37,56 +37,59 @@ export class ChartsComponent implements OnInit {
   // emailExtensions: any[]= [];
   // phonePrefixData: any[]= [];
 
+   /**
+   * Array to store the number of products by producer. Chart 1
+   */
+   numberProductsBySupplier: any[] = [];
+
   /**
-   * Array to store cities where contacts are located.
+   * Array to store cities where contacts are located. Chart 3
    */
   contactsCity: any[] = [];
   /**
-   * Array to store stock per product type.
+   * Array to store products by producer (in %). Chart2 & 4
+   */
+  productsStockPerSupplier: any[] = [];
+  /**
+   * Array to store number of products by producer. Chart5
+   */
+  productsBySupplier: any[] = [];
+
+  /**
+   * Array to store stock per product type. Chart6
    */
   productsStock: any[] = [];
   /**
-   * Array to store price range per product.
+   * Array to store price range per product. Chart7
    */
   productsPriceRange: any[] = [];
   /**
-   * Array to store state os products: active/inactive.
+   * Array to store state os products: active/inactive. Chart8
    */
   stateProducts: any[] = [];
   /**
-   * Array to store the stock by state of products.
+   * Array to store the stock by state of products. Chart9
    */
   stockProducts: any[] = [];
   /**
-   * Array to order products according to the month of registration
+   * Array to order products according to the month of registration Chart10
    */
   productsPerMonth: any[] = [];
+  /**
+   * Array to store the price by product. Chart11
+   */
+  pricePerProduct: any[] = [];
   /**
    * Array to store products by type of product.(SIN USAR)
    */
   // productsPerType: any[] = [];
-  /**
-   * Array to store products by producer (in %).
-   */
-  productsPerSupplier: any[] = [];
-  /**
-   * Array to store number of products by producer.
-   */
-  productsBySupplier: any[] = [];
-  /**
-   * Array to store the price by product.
-   */
-  pricePerProduct: any[] = [];
-  /**
-   * Array to store the number of products by producer.
-   */
-  numberProductsBySupplier: any[] = [];
 
   /**
    * Initializes the component.
    * Fetches data from services and calculates data for charts.
    */
   ngOnInit(): void {
+
     /**
      * Fetches contacts data and calculates the distribution of contacts by city.
      */
@@ -99,8 +102,12 @@ export class ChartsComponent implements OnInit {
       // this.emailExtensions = this.calculateEmailExtensionsData(contacts);
       //  this.phonePrefixData = this.generatePhonePrefixData(contacts);
 
+      /**
+       * Chart 3 productores, muestra la procedencia de los productores
+       */
       this.contactsCity = this.calculateContactCity(contacts);
     });
+
     /**
      * Fetches products data and calculates various metrics for display in charts.
      */
@@ -113,7 +120,7 @@ export class ChartsComponent implements OnInit {
       /**
        * Chart 6 producto, muestra los productos y su cantidad de stack
        */
-      this.productsStock = this.calculateProductStockData(products);
+      this.productsStock = this.calculateProductsStock(products);
       /**
        * Chart 7 producto, muestra los productos y sus rangos de precios
        */
@@ -133,8 +140,9 @@ export class ChartsComponent implements OnInit {
       /**
        * Chart 11 producto, muestra los precios por producto
        */
-      this.pricePerProduct = this.calculatePriceProducts(products);
+      this.pricePerProduct = this.calculatePricePerProduct(products);
     });
+
     /**
      * Fetches combined data of contacts and products and calculates metrics for display in charts.
      */
@@ -145,16 +153,16 @@ export class ChartsComponent implements OnInit {
          * Chart 1 productores, muestra la cantidad de productos activos e inactivos
          */
         this.numberProductsBySupplier =
-          this.calculateNumberProductsPerSupplier(products);
+          this.calculateNumberProductsBySupplier(products);
         /**
          * Chart 2 y 4 productores, muestra la cantidad de productos por cada productor
          */
-        this.productsPerSupplier =
+        this.productsStockPerSupplier =
           this.calculateProductsStockPerSupplier(products);
         /**
          * Chart 5 productores, muestra la cantidad de productos por cada productor en grafica lineal
          */
-        this.productsBySupplier = this.calculateProductsPerProducer(products);
+        this.productsBySupplier = this.calculateProductsBySupplier(products);
       });
   }
   /**
@@ -231,7 +239,7 @@ export class ChartsComponent implements OnInit {
    * @param {any[]} products - The array of products.
    * @returns {any[]} An array of objects, each representing a product and its stock.
    */
-  calculateProductStockData(products: any[]): any[] {
+  calculateProductsStock(products: any[]): any[] {
     const productsStock: any[] = [];
     products.forEach((product) => {
       if (product.active) {
@@ -439,7 +447,7 @@ export class ChartsComponent implements OnInit {
    * @param {Object[]} products - An array of product objects, each having properties like 'product_type', 'name', and 'price'.
    * @returns {Object[]} An array of objects, each representing a product type and its products listed by name along with their prices.
    */
-  calculatePriceProducts(products: any[]): any[] {
+  calculatePricePerProduct(products: any[]): any[] {
     const totalProducts: any[] = [];
 
     products.forEach((product) => {
@@ -487,7 +495,7 @@ export class ChartsComponent implements OnInit {
    * @param {Object[]} contacts - An array of contact objects, each having properties like 'contactName' and 'contactSurname'.
    * @returns {Object[]} An array of objects, each representing a supplier (by full name) and the count of products associated with them.
    */
-  calculateNumberProductsPerSupplier(contacts: any[]): any[] {
+  calculateNumberProductsBySupplier(contacts: any[]): any[] {
     const numProductsSupplier: any[] = [];
     contacts.forEach((contact) => {
       const fullName =
@@ -547,7 +555,7 @@ export class ChartsComponent implements OnInit {
    * @param {Object[]} contacts - An array of contact objects, each having properties like 'contactName' and 'contactSurname'.
    * @returns {Object[]} An array of objects, each representing a producer (by full name) and the count of products associated with them.
    */
-  calculateProductsPerProducer(contacts: any[]): any[] {
+  calculateProductsBySupplier(contacts: any[]): any[] {
     const productsPerProducer = [
       {
         name: 'productos',
@@ -725,7 +733,7 @@ export class ChartsComponent implements OnInit {
    * @param {Object[]} products - An array of product objects, each having properties like 'product_type' and 'price'.
    * @returns {Object[]} An array of objects, each representing a product type and its products listed by name along with their prices.
    */
-  calculatePricePerProduct(products: any[]): any[] {
+  calculatePriceProduct(products: any[]): any[] {
     const pricePerProduct = [
       {
         name: 'Precios/producto',

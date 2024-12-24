@@ -16,19 +16,19 @@ export class CombinedDataService {
    *
    * @param {HttpClient} http Angular HttpClient for making HTTP requests.
    */
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient
+  ) {}
 
+  //Es una accion que necesita obtener datos constante, debe ser observable
   getContactProducts(): Observable<any> {
-    //es una accion que necesita obtener datos constante, debe ser observable
-
     // URL endpoint for fetching combined data:
 
     // const url = 'https://amazing-store-v1-3.onrender.com/combined-data/contact-products';
-    const url =
-      'https://amazing-store-v2-0.onrender.com/combined-data/contact-products';
+    // const url = 'https://amazing-store-v2-0.onrender.com/combined-data/contact-products';//BUENO
     // const url = 'http://192.168.0.10:8080/combined-data/contact-products';
-    // const url = 'http://localhost:30030/combined-data/contact-products';
-
+    const url = 'http://localhost:30030/combined-data/contact-products';
+   
     // Headers configuration for the request
     const headers = new HttpHeaders();
     //.set('Authorization', 'Basic ' + btoa('demo:demo'))

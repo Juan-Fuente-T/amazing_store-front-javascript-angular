@@ -9,17 +9,20 @@ import { ProductUpdateComponent } from './product-update/product-update.componen
 import { ContactNewComponent } from './contact-new/contact-new.component';
 import { ProductNewComponent } from './product-new/product-new.component';
 import { ChartsComponent } from './charts/charts.component';
+import { LoginComponent } from './auth/login/login.component';
+import { authGuard } from './auth/guards/auth.guard';
 
 const routes: Routes = [
-  {path: '', component: ChartsComponent},
-  {path: 'contacts', component: ContactHomeComponent},
-  {path: 'products', component: ProductHomeComponent},
-  {path: 'contact/new', component: ContactNewComponent},
-  {path: 'product/new', component: ProductNewComponent},
-  {path: 'contact/:id', component: ContactDetailComponent},
-  {path: 'product/:id', component: ProductDetailComponent},
-  {path: 'contact/edit/:id', component: ContactUpdateComponent},
-  {path: 'product/edit/:id', component: ProductUpdateComponent}
+  {path: '', component: ChartsComponent, canActivate: [authGuard]},
+  {path: 'contacts', component: ContactHomeComponent, canActivate: [authGuard]},
+  {path: 'products', component: ProductHomeComponent, canActivate: [authGuard]},
+  {path: 'contact/new', component: ContactNewComponent, canActivate: [authGuard]},
+  {path: 'product/new', component: ProductNewComponent, canActivate: [authGuard]},
+  {path: 'contact/:id', component: ContactDetailComponent, canActivate: [authGuard]},
+  {path: 'product/:id', component: ProductDetailComponent, canActivate: [authGuard]},
+  {path: 'contact/edit/:id', component: ContactUpdateComponent, canActivate: [authGuard]},
+  {path: 'product/edit/:id', component: ProductUpdateComponent, canActivate: [authGuard]},
+  {path: 'login', component: LoginComponent} // Esta ruta no necesita el guard
 ];
 
 /**

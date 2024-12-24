@@ -33,6 +33,8 @@ import { ContactDeleteComponent } from './contact-delete/contact-delete.componen
 import { ProductDeleteComponent } from './product-delete/product-delete.component';
 import { ChartsComponent } from './charts/charts.component';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { AuthModule } from './auth/auth.module'; 
+
 // Registra los datos locales para español
 registerLocaleData(localeEs);
 /**
@@ -52,7 +54,7 @@ registerLocaleData(localeEs);
     ProductNewComponent,
     ContactDeleteComponent,
     ProductDeleteComponent,
-    ChartsComponent,
+    ChartsComponent
   ],
   entryComponents: [ContactDeleteComponent], //indica que se abre por encima del resto
   imports: [
@@ -74,6 +76,7 @@ registerLocaleData(localeEs);
     MatCheckboxModule,
     MatDialogModule,
     NgxChartsModule,
+    AuthModule
   ],
   providers: [
     {

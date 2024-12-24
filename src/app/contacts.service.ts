@@ -19,9 +19,9 @@ export class ContactsService {
   getContacts(): Observable<any> {
     //es una accion que necesita obtener datos constante, debe ser observable
     // const url = 'https://amazing-store-v1-2.onrender.com/contacts/getAll';
-    const url = 'https://amazing-store-v2-0.onrender.com/contacts/getAll';
+    // const url = 'https://amazing-store-v2-0.onrender.com/contacts/getAll';//BUENO
     // const url = 'http://192.168.0.15:30030/contacts/getAll';
-    // const url = 'http://localhost:30030/contacts/getAll';
+    const url = 'http://localhost:30030/contacts/getAll';
     const headers = new HttpHeaders();
     //.set('Authorization', 'Basic ' + btoa('demo:demo'))
     //.set('X-User', 'demo')
@@ -36,9 +36,9 @@ export class ContactsService {
 
   getContact(c_id: number): Observable<any> {
     // const url = 'https://amazing-store-v1-2.onrender.com/contacts/get';
-    const url = 'https://amazing-store-v2-0.onrender.com/contacts/get';
+    // const url = 'https://amazing-store-v2-0.onrender.com/contacts/get';//BUENO
     // const url = 'http://192.168.0.15:30030/contacts/get';
-    // const url = 'http://localhost:30030/contacts/get';
+    const url = 'http://localhost:30030/contacts/get';
     const headers = new HttpHeaders().set('Content-type', 'application/json');
     const body = JSON.stringify({ id: c_id });
     return this.http.post<any>(url, body, { headers });
@@ -58,9 +58,9 @@ export class ContactsService {
 
   updateContact(contact: any): Observable<any> {
     // const url = 'https://amazing-store-v1-2.onrender.com/contacts/update';
-    const url = 'https://amazing-store-v2-0.onrender.com/contacts/update';
+    // const url = 'https://amazing-store-v2-0.onrender.com/contacts/update';//BUENO
     // const url = 'http://192.168.0.15:30030/contacts/update';
-    // const url = 'http://localhost:30030/contacts/update';
+    const url = 'http://localhost:30030/contacts/update';
     const headers = new HttpHeaders();
     const body = contact;
     return this.http.put(url, body, { headers });
@@ -72,9 +72,9 @@ export class ContactsService {
    */
   newContact(contact: any): void {
     // const url = 'https://amazing-store-v1-2.onrender.com/contacts/add';
-    const url = 'https://amazing-store-v2-0.onrender.com/contacts/add';
+    // const url = 'https://amazing-store-v2-0.onrender.com/contacts/add';//BUENO
     // const url = 'http://192.168.0.15:30030/contacts/add';
-    // const url = 'http://localhost:30030/contacts/add';
+    const url = 'http://localhost:30030/contacts/add';
     const headers = new HttpHeaders();
     const body = contact;
     //es una accion puntual, que se inicia aqui, puede ser subscribe
@@ -93,9 +93,9 @@ export class ContactsService {
    */
   deleteContact(id: number): void {
     // const url = 'https://amazing-store-v1-2.onrender.com/contacts/delete';
-    const url = 'https://amazing-store-v2-0.onrender.com/contacts/delete';
+    // const url = 'https://amazing-store-v2-0.onrender.com/contacts/delete';//BUENO
     // const url = 'http://192.168.0.15:30030/contacts/delete';
-    // const url = 'http://localhost:30030/contacts/delete';
+    const url = 'http://localhost:30030/contacts/delete';
     //
     const body = { id: id };
     const options = {

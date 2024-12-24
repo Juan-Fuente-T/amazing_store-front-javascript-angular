@@ -1,5 +1,8 @@
-a {
+a, button {
   border: solid 1px whitesmoke;
   border-radius: 4px;
   margin: 0 5px;
+}
+.spacer {
+  flex: 1 1 auto;
 }

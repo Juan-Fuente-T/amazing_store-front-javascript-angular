@@ -1,0 +1,14 @@
+<ng-container *ngIf="!isLoggedIn; else loggedInContent">
+    <h2>Iniciar sesión</h2>
+    <form (ngSubmit)="onSubmit()">
+      <input [(ngModel)]="username" name="username" type="text" placeholder="Username" required>
+      <input [(ngModel)]="password" name="password" type="password" placeholder="Password" required>
+      <!-- <checkbox [(ngModel)]="admin" name="admin" type="checkbox" placeholder="Admin"> --> 
+      <button type="submit">Login</button>
+    </form>
+  </ng-container>
+  <ng-template #loggedInContent>
+    <h2>Bienvenido, {{ username }}!</h2>
+    <p>Ya has iniciado sesión. Puedes ir a la página principal o cerrar sesión.</p>
+    <button (click)="logout()">Logout</button> <!-- Asegúrate de tener un método logout en tu componente -->
+  </ng-template>

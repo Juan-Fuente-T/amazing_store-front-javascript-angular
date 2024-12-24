@@ -2,5 +2,13 @@
   <a mat-button routerLink="/">Home</a>
   <a mat-button routerLink="/contacts">Contactos</a>
   <a mat-button routerLink="/products">Productos</a>
+  <span class="spacer"></span>
+  <ng-container *ngIf="isLoggedIn; else loginButton">
+    <span>Bienvenido, {{ username }}</span>
+    <button mat-button (click)="logout()">Logout</button>
+  </ng-container>
+  <ng-template #loginButton>
+    <a mat-button routerLink="/login">Login</a>
+  </ng-template>
 </mat-toolbar>
 <router-outlet></router-outlet>

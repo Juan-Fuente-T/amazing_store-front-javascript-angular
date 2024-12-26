@@ -11,6 +11,7 @@ export class LoginComponent {
   username: string | undefined;
   password: string | undefined;
   isLoggedIn: boolean = false;
+  isLoading: boolean = false;
 
   constructor(private authService: AuthService, private router: Router) { }
 
@@ -23,22 +24,31 @@ export class LoginComponent {
     });
   }
   onSubmit() {
+    // console.log('isLoading antes:', this.isLoading);
     if (this.username && this.password) {
+      this.isLoading = true;
       this.authService.login(this.username, this.password).subscribe({
         next: (response: { token: string }) => {
           // Almacena el token en localStorage
           // localStorage.setItem('token', response.token);
           // Redirige a la página principal
+        // console.log('Login exitoso, isLoading:', this.isLoading);
+          this.isLoading = false;
           this.router.navigate(['']);
         },
         error: (error: any) => {
+          // console.log('Login fallido, isLoading:', this.isLoading);
+          this.isLoading = false;
           console.error('Login failed', error);
           alert('Login failed');
           // Manejo de errores, puedes mostrar un mensaje al usuario
         }
       });
     } else {
+      // console.log('Login fallido, isLoading:', this.isLoading);
+      this.isLoading = false;
       console.error('Username and password are required');
+      alert('Login failed');
     }
   }
   logout() {

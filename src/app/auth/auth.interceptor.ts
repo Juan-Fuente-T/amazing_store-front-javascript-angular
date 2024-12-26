@@ -23,7 +23,8 @@ export class AuthInterceptor implements HttpInterceptor {
                 this.authService.removeToken();
                 this.router.navigate(['/login']);
               }
-              return throwError(() => new Error('test'));
+              console.error('Error: ', error);
+              return throwError(() => error);
             })
           );
         }

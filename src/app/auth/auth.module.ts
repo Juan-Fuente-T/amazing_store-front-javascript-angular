@@ -5,6 +5,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './auth.interceptor';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from '../app.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 
 
@@ -14,7 +15,8 @@ import { AppComponent } from '../app.component';
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    MatProgressSpinnerModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }

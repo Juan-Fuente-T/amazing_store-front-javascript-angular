@@ -66,7 +66,12 @@
             <p>La aplicación ofrece gráficos informativos sobre los productores y el estado del stock. Los productos se muestran organizados por categorías y visualmente separados por niveles de color, lo que facilita su identificación.</p>
             <p>Amazing Store mejora tu experiencia al gestionar tu inventario.</p>
           </div>
-          
+          <div *ngIf="isLoading" class="loading-container">
+            <mat-spinner *ngIf="isLoading" class="loading-spinner"></mat-spinner>
+            <p *ngIf="isLoading" class="loading-message">
+            Iniciando sesión...
+            </p>
+          </div>
           <div class="form-secondsection">
               <h2>Iniciar Sesión</h2>
               <form (ngSubmit)="onSubmit()" class="login-form">

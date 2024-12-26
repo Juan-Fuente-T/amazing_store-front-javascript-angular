@@ -26,7 +26,6 @@ export class LoginComponent {
     if (this.username && this.password) {
       this.authService.login(this.username, this.password).subscribe({
         next: (response: { token: string }) => {
-          console.log('Token recibido:', response.token);
           // Almacena el token en localStorage
           // localStorage.setItem('token', response.token);
           // Redirige a la página principal

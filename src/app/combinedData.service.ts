@@ -26,8 +26,9 @@ export class CombinedDataService {
 
     // const url = 'https://amazing-store-v1-3.onrender.com/combined-data/contact-products';
     // const url = 'https://amazing-store-v2-0.onrender.com/combined-data/contact-products';//BUENO
+    const url = 'https://amazing-store-v2-1.onrender.com/combined-data/contact-products';//BUENO
     // const url = 'http://192.168.0.10:8080/combined-data/contact-products';
-    const url = 'http://localhost:30030/combined-data/contact-products';
+    // const url = 'http://localhost:30030/combined-data/contact-products';
    
     // Headers configuration for the request
     const headers = new HttpHeaders();

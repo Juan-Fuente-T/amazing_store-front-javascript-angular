@@ -29,15 +29,13 @@ export class ProductsService {
   getProducts(): Observable<any> {
     // const url = 'https://amazing-store-v1-2.onrender.com/products/getAll'; //RENDER.COM imagen v1.2
     // const url = 'https://amazing-store-v2-0.onrender.com/products/getAll'; //RENDER.COM imagen 2.0 //BUENO
+    const url = 'https://amazing-store-v2-1.onrender.com/products/getAll'; //RENDER.COM imagen v1.2
     // const url = 'http://192.168.0.15:30030/products/getAll'; //CONTENEDOR DOCKER LOCAL
-    const url = 'http://localhost:30030/products/getAll'; //LOCAL INTELLIJ
+    // const url = 'http://localhost:30030/products/getAll'; //LOCAL INTELLIJ
     const headers = new HttpHeaders();
     //.set('Authorization', 'Basic ' + btoa('demo:demo'))
     //.set('X-User', 'demo')
     //.set('X-Password', 'demo');
-    
-    console.log("headers", headers);
-    console.log("url", url);
     return this.http.get<any>(url, { headers });
   }
   /**
@@ -49,8 +47,9 @@ export class ProductsService {
   getProduct(p_id: number): Observable<any> {
     // const url = 'https://amazing-store-v1-2.onrender.com/products/get';
     // const url = 'https://amazing-store-v2-0.onrender.com/products/get';//BUENO
+    const url = 'https://amazing-store-v2-1.onrender.com/products/get';//BUENO
     // const url = 'http://192.168.0.15:30030/products/get';
-    const url = 'http://localhost:30030/products/get';
+    // const url = 'http://localhost:30030/products/get';
 
     const headers = new HttpHeaders().set('Content-type', 'application/json');
     const body = JSON.stringify({ id: p_id });
@@ -66,8 +65,9 @@ export class ProductsService {
   updateProduct(product: Product): Observable<any> {
     // const url = 'https://amazing-store-v1-2.onrender.com/products/update';
     // const url = 'https://amazing-store-v2-0.onrender.com/products/update';//BUENO
+    const url = 'https://amazing-store-v2-1.onrender.com/products/update';//BUENO
     // const url = 'http://192.168.0.15:30030/products/update';
-    const url = 'http://localhost:30030/products/update';
+    // const url = 'http://localhost:30030/products/update';
     const headers = new HttpHeaders();
     const body = product;
     return this.http.put(url, body, { headers });
@@ -81,8 +81,9 @@ export class ProductsService {
   newProduct(product: Product): void {
     // const url = 'https://amazing-store-v1-2.onrender.com/products/add';
     // const url = 'https://amazing-store-v2-0.onrender.com/products/add';//BUENO
+    const url = 'https://amazing-store-v2-1.onrender.com/products/add';//BUENO
     // const url = 'http://192.168.0.15:30030/products/add';
-    const url = 'http://localhost:30030/products/add';
+    // const url = 'http://localhost:30030/products/add';
     const headers = new HttpHeaders();
     const body = product;
     this.http.post(url, body, { headers }).subscribe();
@@ -102,8 +103,9 @@ export class ProductsService {
   deleteProduct(id: number): void {
     // const url = 'https://amazing-store-v1-2.onrender.com/products/delete';
     // const url = 'https://amazing-store-v2-0.onrender.com/products/delete';//BUENO
+    const url = 'https://amazing-store-v2-1.onrender.com/products/delete';//BUENO
     // const url = 'http://192.168.0.15:30030/products/delete';
-    const url = 'http://localhost:30030/products/delete';
+    // const url = 'http://localhost:30030/products/delete';
     const body = { id: id };
     const options = {
       body: body,

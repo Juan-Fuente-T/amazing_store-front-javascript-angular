@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, tap } from 'rxjs';
+import { environment } from 'src/environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
@@ -13,12 +14,14 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   login(username: string, password: string): Observable<any> {
-    return this.http.post<any>('http://localhost:30030/api/auth/login', { username, password })
-      .pipe(
+    // return this.http.post<any>('http://localhost:30030/api/auth/login', { username, password })
+    // return this.http.post<any>('/api/auth/login', { username, password })
+    return this.http.post<any>(`${environment.apiUrl}/api/auth/login`, { username, password })
+        .pipe(
         tap((response: { token: any; }) => {
           if (response && response.token) {
             this.setToken(response.token);
-            console.log('Token almacenado:', response.token); // Verifica que se almacene correctamente
+            // console.log('Token almacenado:', response.token); // Verifica que se almacene correctamente
             this.setUsername(username);
             this.isLoggedInSubject.next(true);
           }
@@ -30,7 +33,6 @@ export class AuthService {
   }
 
   getToken(): string | null {
-    console.log(localStorage.getItem(this.tokenKey));
     return localStorage.getItem(this.tokenKey);
   }
 
@@ -47,8 +49,6 @@ export class AuthService {
   }
 
   isLoggedIn(): boolean {
-    console.log("this.getToken()", this.getToken());
-    console.log("!!this.getToken()", !!this.getToken());
     return !!this.getToken();
   }
   logout() {

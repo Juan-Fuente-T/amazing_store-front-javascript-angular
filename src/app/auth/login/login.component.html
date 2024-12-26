@@ -1,14 +1,128 @@
-<ng-container *ngIf="!isLoggedIn; else loggedInContent">
+<!-- <ng-container *ngIf="!isLoggedIn; else loggedInContent">
     <h2>Iniciar sesión</h2>
     <form (ngSubmit)="onSubmit()">
       <input [(ngModel)]="username" name="username" type="text" placeholder="Username" required>
-      <input [(ngModel)]="password" name="password" type="password" placeholder="Password" required>
-      <!-- <checkbox [(ngModel)]="admin" name="admin" type="checkbox" placeholder="Admin"> --> 
-      <button type="submit">Login</button>
+      <input [(ngModel)]="password" name="password" type="password" placeholder="Password" required> -->
+      <!-- <checkbox [(ngModel)]="admin" name="admin" type="checkbox" placeholder="Admin">  -->
+      <!-- <button type="submit">Login</button>
     </form>
   </ng-container>
   <ng-template #loggedInContent>
     <h2>Bienvenido, {{ username }}!</h2>
     <p>Ya has iniciado sesión. Puedes ir a la página principal o cerrar sesión.</p>
-    <button (click)="logout()">Logout</button> <!-- Asegúrate de tener un método logout en tu componente -->
+    <button (click)="logout()">Logout</button> 
+  </ng-template> -->
+
+<!--/*////////////////////////////*/-->
+
+  <!-- <div class="container">
+    <header>
+      <h1>Bienvenidos a Amazing Store</h1>
+      <p class="subtitle">La solución perfecta para la gestión de tu tienda o almacén.</p>
+    </header>
+  
+    <div class="content">
+      <div class="description">
+        <h2>¿Qué es Amazing Store?</h2>
+        <p>Amazing Store es una aplicación destinada a la gestión eficiente de tiendas y almacenes. Puedes dar de alta, editar o eliminar productores y contactos, así como gestionar productos asociados a ellos.</p>
+        <p>La aplicación ofrece gráficos informativos sobre los productores y el estado del stock. Los productos están organizados por categorías y visualmente separados por niveles de color, lo que facilita su identificación.</p>
+        <p>Con un diseño sofisticado y atractivo, Amazing Store mejora tu experiencia al gestionar tu inventario.</p>
+        <img src="assets/images/3.8.png" alt="Gestión de Productos" class="feature-image">
+        <img src="assets/images/16.10.png" alt="Gráficos Informativos" class="feature-image"> 
+      </div>
+  
+      <div class="login-section">
+        <h2>Iniciar Sesión</h2>
+        <form (ngSubmit)="onSubmit()" class="login-form">
+          <input [(ngModel)]="username" name="username" type="text" placeholder="Usuario" required>
+          <input [(ngModel)]="password" name="password" type="password" placeholder="Contraseña" required>
+          <button type="submit">Iniciar Sesión</button>
+        </form>
+      </div>
+    </div>
+  
+    <footer>
+      <p>© 2024 Amazing Store. Todos los derechos reservados.</p>
+    </footer>
+  </div> -->
+<!--/*////////////////////////////*/-->  
+<div class="hero">
+    <div class="overlay">
+        <h1>Bienvenidos a Amazing Store</h1>
+      <div class="first-container">
+        <div class="content">
+          <div class="text-firstsection">
+              <p>Amazing Store es una aplicación destinada a la gestión eficiente de tiendas y almacenes. Puedes dar de alta, editar o eliminar productores/contactos, así como gestionar(dar de alta, editar o eliminar) productos asociados a ellos.</p>
+            </div>
+            <div class="image-section">
+              <img src="assets/images/Amazing_store.1.webp" alt="Gestión de Productos" class="feature-image"> <!-- Reemplaza con la ruta de tu imagen -->
+            </div>
+        </div>
+      </div>
+    <div>
+        <div class="second-container">
+          <div class="text-secondsection">
+            
+            <p>La aplicación ofrece gráficos informativos sobre los productores y el estado del stock. Los productos se muestran organizados por categorías y visualmente separados por niveles de color, lo que facilita su identificación.</p>
+            <p>Amazing Store mejora tu experiencia al gestionar tu inventario.</p>
+          </div>
+          
+          <div class="form-secondsection">
+              <h2>Iniciar Sesión</h2>
+              <form (ngSubmit)="onSubmit()" class="login-form">
+                  <input [(ngModel)]="username" name="username" type="text" placeholder="Usuario" required>
+                  <input [(ngModel)]="password" name="password" type="password" placeholder="Contraseña" required>
+                  <button type="submit">Iniciar Sesión</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+  </div>
+  
+  <footer>
+    <p>© 2024 Amazing Store. Todos los derechos reservados.</p>
+  </footer>
+  
+
+<!--/*////////////////////////////*/-->
+
+  <!-- <ng-container *ngIf="!isLoggedIn; else loggedInContent">
+    <div class="welcome-container">
+      <div class="header">
+        <h1>Bienvenidos a Amazing Store</h1>
+        <img src="ruta/a/tu/logo.png" alt="Logo de Amazing Store" class="logo">
+      </div>
+      
+      <p class="description">
+        Amazing Store es una aplicación destinada a la gestión de una tienda o almacén. Puedes dar de alta, editar o dar de baja los productores/contactos que desees, así como los productos asociados a ellos.
+      </p>
+      
+      <p class="description">
+        Hay varios gráficos que aportan información sobre los productores y el estado del stock. Los productos están organizados por categoría y separados visualmente por niveles de color.
+      </p>
+  
+      <p class="description">
+        Disfruta de un diseño sofisticado que mejora tu experiencia al gestionar tu inventario de manera eficiente.
+      </p>
+  
+      <form class="login-form" (ngSubmit)="onSubmit()">
+        <input [(ngModel)]="username" name="username" type="text" placeholder="Usuario" required>
+        <input [(ngModel)]="password" name="password" type="password" placeholder="Contraseña" required>
+        <button type="submit">Iniciar Sesión</button>
+      </form>
+      
+      <div class="footer">
+        <p>© 2024 Amazing Store. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </ng-container>
+  
+  <ng-template #loggedInContent>
+    <div class="welcome-container">
+      <h2>¡Bienvenido, {{ username }}!</h2>
+      <p>Ya has iniciado sesión. Puedes ir a la página principal o cerrar sesión.</p>
+      <button (click)="logout()">Cerrar Sesión</button>
+    </div>
   </ng-template>
+   -->

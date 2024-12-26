@@ -4,6 +4,15 @@ import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { ContactDeleteComponent } from '../contact-delete/contact-delete.component';
 
+interface Contact {
+  id: number;
+  name: string; 
+  surname: string;
+  telephone: string;
+  email: string;
+  city: string;
+  product_type: string;
+}
 /**
  * ContactHomeComponent displays a list of contacts and allows actions such as editing details, viewing details, and deleting contacts.
  */
@@ -16,7 +25,7 @@ export class ContactHomeComponent {
    /**
    * Data source for displaying contacts in the table.
    */
-  dataSource: any = [];
+  dataSource: Contact[] = [];
    /**
    * Constructor for ContactHomeComponent.
    * Initializes the component with the service for contacting operations,
@@ -49,7 +58,7 @@ export class ContactHomeComponent {
    /**
    * Navigates to the detail view of a contact.
    * 
-   * @param {any} row Contact object containing the id of the contact.
+   * @param {number} row Contact object containing the id of the contact.
    */
   openDetailForm(row: any){
     this.router.navigate(['/contact', row.id]);
@@ -65,9 +74,9 @@ export class ContactHomeComponent {
    /**
    * Navigates to the edit page of a contact.
    * 
-   * @param {any} contactId ID of the contact to edit.
+   * @param {number} contactId ID of the contact to edit.
    */
-  editContactDetail(contactId: any){
+  editContactDetail(contactId: number){
     this.router.navigate(['/contact/edit', contactId]);
   }
 }

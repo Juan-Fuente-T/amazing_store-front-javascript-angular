@@ -1,0 +1,223 @@
+/* Estilos generales
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f3f4f6; 
+    margin: 0;
+    padding: 0;
+  }
+  
+  Contenedor de bienvenida
+  .welcome-container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    background-color: #ffffff; 
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  Encabezado
+  .header {
+    text-align: center;
+  }
+  
+  .logo {
+    width: 100px;
+  }
+  
+  Títulos
+  h1 {
+    color: #5e35b1; 
+  }
+  
+  h2 {
+    color: #5e35b1; 
+  }
+  
+  Descripción
+  .description {
+    color: #333333; 
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  Estilos del formulario
+  .login-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .login-form input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+  
+  .login-form input:focus {
+    border-color: #5e35b1;
+  }
+  
+  .login-form button {
+    padding: 10px;
+    background-color: #5e35b1; 
+    color: white; 
+    border: none;
+    border-radius: 4px;
+  }
+  
+  .login-form button:hover {
+    background-color: #7e57c2; 
+  }
+  
+  Estilos del pie de página
+  .footer {
+     text-align: center;
+     margin-top:20px;
+     font-size: small;
+     color:#777777; 
+  }
+  
+   */
+/*--------------------//////////////////////-----------------------*/
+
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+}
+
+.hero {
+  background-image: url('/assets/images/Amazing_store.2.webp');
+  background-size: cover;
+  background-position: center;
+  padding: 25px ;
+}
+
+.overlay {
+  /* background-color: rgba(60, 7, 139, 0.492); */
+  background-color: rgba(255, 255, 255, 0.671);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+h1 {
+  text-align: center;
+  color: whitesmoke;
+  font-size: 1.8rem;
+  width: fit-content;
+  background-color: #5e35b195;
+  font-size: 2.5em;
+  padding: 10px;
+  border-radius: 6px;
+  margin: auto;
+  margin-bottom: 30px;
+}
+
+.first-container, .second-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.text-firstsection {
+  flex: 1;
+  padding: 5px;
+  border-radius: 5px;
+  margin-right: 20px;
+  color: whitesmoke;
+  font-size: 1.2rem;
+  background-color: #5e35b195;
+  text-align:right;
+}
+
+.image-section {
+
+  width: 30%;
+}
+
+.feature-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.second-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+  width: 80%;
+}
+
+.text-secondsection {
+  flex: 2;
+  padding-right: 40px;
+  color: whitesmoke;
+  text-align:center;
+}
+.text-secondsection p{
+  display: inline-block;
+  padding: 5px;
+  border-radius: 5px;
+  color: whitesmoke;
+  font-size: 1.2rem;
+  background-color: #5e35b195;
+  margin-bottom: 8px;
+}
+
+.form-secondsection {
+  flex: 1;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 60%;
+  justify-content: center;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form input {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.login-form button {
+  padding: 10px;
+  background-color: #5e35b1;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.login-form button:hover {
+  background-color: #7e57c2;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #333;
+  color: white;
+}
+
+/*--------------------//////////////////////-----------------------*/
+/* Estilos generales */
+
+    /*--------------------//////////////////////-----------------------*/
+    

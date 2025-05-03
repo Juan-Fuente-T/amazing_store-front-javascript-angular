@@ -18,7 +18,7 @@ La aplicación implementa una arquitectura full-stack, combinando un backend rob
 
 Puedes experimentar la aplicación en funcionamiento aquí:
 
-- **URL**: juanfuente.ovh/amazing_store
+- **URL**: https://juanfuente.ovh/amazing_store
 - **Credenciales de Acceso**:
   - Usuario: `user`
   - Contraseña: `user123`

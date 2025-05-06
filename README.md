@@ -4,7 +4,7 @@
 
 [![Estado del Despliegue](https://img.shields.io/website?url=https%3A%2F%2Famazing-store-front-javascript-angular-full.vercel.app&label=Frontend%20%28Vercel%29)](https://amazing-store-front-javascript-angular-full.vercel.app)
 
-[![Estado del Despliegue](https://img.shields.io/website?url=https%3A%2F%2Famazing-store-v2-1.onrender.com%2Fapi%2Fpublic%2Fping&label=Backend%20%28Render%29)](https://amazing-store-v2-1.onrender.com/api/test)
+[![Backend en Render](https://img.shields.io/badge/Backend-Render-blue)](https://amazing-store-front-javascript-angular-full.vercel.app/)
 
 [![Licencia: MIT](https://img.shields.io/badge/Licencia-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
